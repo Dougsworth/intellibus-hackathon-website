@@ -223,10 +223,10 @@ export default function Page() {
             <Badge variant="secondary" className="h-7 items-center rounded-full px-4 text-sm font-medium">
               Intellibus Hackathon 2025 🚀
             </Badge>
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent">
               Build. Innovate. Win.
             </h1>
-            <p className="max-w-[48rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
+            <p className="max-w-[48rem] text-lg leading-relaxed text-muted-foreground sm:text-xl sm:leading-8">
               Launch groundbreaking solutions in real-time experiences with cutting-edge technology and cloud-native
               deployments.
             </p>
@@ -244,11 +244,11 @@ export default function Page() {
                 <span>$15,000+ in Prizes</span>
               </div>
             </div>
-            <div className="flex flex-wrap justify-center gap-4 mt-6">
-              <Button size="lg" className="h-12 px-8 text-base font-semibold" asChild>
+            <div className="flex flex-wrap justify-center gap-4 mt-8">
+              <Button size="lg" className="h-12 px-8 text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" asChild>
                 <Link href="#register">Get Started</Link>
               </Button>
-              <Button variant="outline" size="lg" className="h-12 px-8 text-base font-semibold" asChild>
+              <Button variant="outline" size="lg" className="h-12 px-8 text-base font-semibold border-2 hover:bg-accent/50 transition-all duration-300 hover:scale-105" asChild>
                 <Link href="/docs">
                   Explore Documentation <span className="ml-2">→</span>
                 </Link>
@@ -260,18 +260,18 @@ export default function Page() {
         {/* Challenge Section */}
         <section id="challenge" className="container py-12 md:py-24 lg:py-32 border-t scroll-mt-20">
           <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
-            <h2 className="text-3xl font-bold leading-[1.1] sm:text-3xl md:text-6xl">
+            <h2 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl tracking-tight">
               Challenge: Real-Time Experience
             </h2>
-            <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+            <p className="max-w-[85%] text-lg leading-relaxed text-muted-foreground sm:text-xl sm:leading-8">
               Build a Real-Time Experience that solves real-world problems with cutting-edge technology
             </p>
           </div>
 
           <div className="mt-12 grid gap-8 md:grid-cols-2">
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4">Overview</h3>
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-bold mb-4 text-foreground">Overview</h3>
                 <p className="text-muted-foreground mb-4">
                   Your team is tasked with building a Real-Time Experience, where users can securely store, search, and
                   personalize their data, with automated deployments and multi-platform accessibility.
@@ -291,9 +291,9 @@ export default function Page() {
               </CardContent>
             </Card>
 
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4">Tech Stack Requirements</h3>
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-bold mb-4 text-foreground">Tech Stack Requirements</h3>
                 <div className="space-y-4">
                   <div>
                     <h4 className="font-semibold">Backend:</h4>
@@ -336,9 +336,9 @@ export default function Page() {
                   solution: "Real-time outage prediction system monitoring grid health and alerting users.",
                 },
               ].map((useCase, i) => (
-                <Card key={i}>
+                <Card key={i} className="border-0 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                   <CardContent className="p-6">
-                    <h4 className="font-bold mb-2">{useCase.title}</h4>
+                    <h4 className="font-bold mb-3 text-lg text-foreground">{useCase.title}</h4>
                     <div className="space-y-2">
                       <div>
                         <span className="text-red-500">🛑 Broken Experience:</span>
@@ -378,7 +378,7 @@ export default function Page() {
           <div className="mt-12 text-center">
             <h3 className="text-2xl font-bold mb-4">Ready to Build?</h3>
             <p className="text-muted-foreground mb-6">Make it real-time, make it fun, and get coding!</p>
-            <Button size="lg" asChild>
+            <Button size="lg" className="h-12 px-8 text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" asChild>
               <Link href="/register">Start Building Now</Link>
             </Button>
           </div>
@@ -387,28 +387,28 @@ export default function Page() {
         {/* Tech Stack Section */}
         <section id="tech-stack" className="container py-12 md:py-24 lg:py-32 scroll-mt-20">
           <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
-            <h2 className="text-3xl font-bold leading-[1.1] sm:text-3xl md:text-6xl">Built for Developers</h2>
-            <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+            <h2 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl tracking-tight">Built for Developers</h2>
+            <p className="max-w-[85%] text-lg leading-relaxed text-muted-foreground sm:text-xl sm:leading-8">
               Solve real-world broken experiences with AI, Cloud, and Real-Time Systems
             </p>
           </div>
 
           <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3 lg:gap-8">
             {/* Tech Stack Cards */}
-            <Card className="mt-8">
-              <CardContent className="flex flex-col items-center gap-4 p-6">
-                <Tool className="h-12 w-12" />
-                <h3 className="text-xl font-bold">Tech Stack</h3>
+            <Card className="mt-8 border-0 shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <CardContent className="flex flex-col items-center gap-4 p-8">
+                <Tool className="h-12 w-12 text-primary group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-xl font-bold text-foreground">Tech Stack</h3>
                 <p className="text-center text-sm text-muted-foreground">
                   Java | React | TypeScript | Kafka | Postgres | Snowflake | AWS | Terraform
                 </p>
               </CardContent>
             </Card>
 
-            <Card>
-              <CardContent className="flex flex-col items-center gap-4 p-6">
-                <Rocket className="h-12 w-12" />
-                <h3 className="text-xl font-bold">Build & Deploy</h3>
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <CardContent className="flex flex-col items-center gap-4 p-8">
+                <Rocket className="h-12 w-12 text-primary group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-xl font-bold text-foreground">Build & Deploy</h3>
                 <ul className="text-sm text-muted-foreground">
                   <li>🔹 Build Scalable, Cloud-Native Applications</li>
                   <li>🔹 Real-Time Streaming & Personalization</li>
@@ -417,10 +417,10 @@ export default function Page() {
               </CardContent>
             </Card>
 
-            <Card>
-              <CardContent className="flex flex-col items-center gap-4 p-6">
-                <Users className="h-12 w-12" />
-                <h3 className="text-xl font-bold">Features</h3>
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 group">
+              <CardContent className="flex flex-col items-center gap-4 p-8">
+                <Users className="h-12 w-12 text-primary group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-xl font-bold text-foreground">Features</h3>
                 <ul className="text-sm text-muted-foreground">
                   <li>☑️ Live Mentorship</li>
                   <li>☑️ Hands-On Workshops</li>
@@ -434,8 +434,8 @@ export default function Page() {
         {/* SPAIN Framework Section */}
         <section className="container py-12 md:py-24 lg:py-32 border-t scroll-mt-20">
           <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
-            <h2 className="text-3xl font-bold leading-[1.1] sm:text-3xl md:text-6xl text-balance">What is SPAIN?</h2>
-            <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7 text-pretty">
+            <h2 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl tracking-tight text-balance">What is SPAIN?</h2>
+            <p className="max-w-[85%] text-lg leading-relaxed text-muted-foreground sm:text-xl sm:leading-8 text-pretty">
               At the AI Hackathon, we focus on building solutions that are not just innovative but functional, reliable,
               and impactful. That's where SPAIN comes in – a structured framework to guide your development process.
             </p>
@@ -636,27 +636,30 @@ export default function Page() {
             <h2 className="text-3xl font-bold leading-[1.1] sm:text-3xl md:text-6xl">Prizes & Rewards</h2>
           </div>
 
-          <div className="mx-auto mt-8 grid gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3 lg:gap-8">
-            <Card>
-              <CardContent className="flex flex-col items-center gap-4 p-6">
-                <Trophy className="h-12 w-12 text-primary" />
-                <h3 className="text-xl font-bold">Top 20</h3>
+          <div className="mx-auto mt-8 grid gap-6 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3 lg:gap-8">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <CardContent className="flex flex-col items-center gap-4 p-8 relative z-10">
+                <Trophy className="h-12 w-12 text-yellow-600 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-xl font-bold text-foreground">Top 20</h3>
                 <p className="text-center text-sm text-muted-foreground">Employment Opportunities at Intellibus</p>
               </CardContent>
             </Card>
 
-            <Card>
-              <CardContent className="flex flex-col items-center gap-4 p-6">
-                <Gift className="h-12 w-12 text-primary" />
-                <h3 className="text-xl font-bold">Next 20</h3>
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <CardContent className="flex flex-col items-center gap-4 p-8 relative z-10">
+                <Gift className="h-12 w-12 text-blue-600 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-xl font-bold text-foreground">Next 20</h3>
                 <p className="text-center text-sm text-muted-foreground">3-Month Scholarship to Intellibus Academy</p>
               </CardContent>
             </Card>
 
-            <Card>
-              <CardContent className="flex flex-col items-center gap-4 p-6">
-                <Rocket className="h-12 w-12 text-primary" />
-                <h3 className="text-xl font-bold">Next 60</h3>
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <CardContent className="flex flex-col items-center gap-4 p-8 relative z-10">
+                <Rocket className="h-12 w-12 text-green-600 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="text-xl font-bold text-foreground">Next 60</h3>
                 <p className="text-center text-sm text-muted-foreground">Fast-Track Admissions with fee waivers</p>
               </CardContent>
             </Card>
