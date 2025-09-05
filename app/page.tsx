@@ -23,10 +23,15 @@ import {
   Layout,
   Database,
   Brain,
+  ChevronDown,
+  ExternalLink,
+  Briefcase,
+  Shield,
 } from "lucide-react"
 import Link from "next/link"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 const rulesData = [
   { category: "Eligibility", icon: "✅", rule: "Participants must be 18 years or older to participate." },
@@ -187,30 +192,79 @@ export default function Page() {
             <Rocket className="h-6 w-6" />
             <span className="font-bold">Intellibus Hackathon</span>
           </Link>
-          <nav className="ml-auto flex gap-4">
-            <Link href="#prizes" className="text-sm font-medium hover:underline underline-offset-4">
+          <nav className="ml-auto flex items-center gap-6">
+            <Link href="#prizes" className="text-sm font-medium hover:text-primary transition-colors">
               Prizes
             </Link>
-            <Link href="#tech-stack" className="text-sm font-medium hover:underline underline-offset-4">
+            <Link href="#tech-stack" className="text-sm font-medium hover:text-primary transition-colors">
               Tech Stack
             </Link>
-            <Link href="#challenge" className="text-sm font-medium hover:underline underline-offset-4">
+            <Link href="#challenge" className="text-sm font-medium hover:text-primary transition-colors">
               Challenge
             </Link>
-            <Link href="#rules" className="text-sm font-medium hover:underline underline-offset-4">
-              Rules
-            </Link>
-            <Link href="#schedule" className="text-sm font-medium hover:underline underline-offset-4">
-              Schedule
-            </Link>
-            <Link href="#jobs" className="text-sm font-medium hover:underline underline-offset-4">
-              Jobs
-            </Link>
-            <Link href="#about" className="text-sm font-medium hover:underline underline-offset-4">
+            
+            {/* Event Info Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center text-sm font-medium hover:text-primary transition-colors">
+                Event Info
+                <ChevronDown className="ml-1 h-3 w-3" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48">
+                <DropdownMenuItem asChild>
+                  <Link href="#rules" className="cursor-pointer">
+                    <Shield className="mr-2 h-4 w-4" />
+                    Rules & Guidelines
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="#schedule" className="cursor-pointer">
+                    <Calendar className="mr-2 h-4 w-4" />
+                    Event Schedule
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/docs" className="cursor-pointer">
+                    <Code className="mr-2 h-4 w-4" />
+                    Documentation
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Opportunities Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center text-sm font-medium hover:text-primary transition-colors">
+                Opportunities
+                <ChevronDown className="ml-1 h-3 w-3" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48">
+                <DropdownMenuItem asChild>
+                  <Link href="#jobs" className="cursor-pointer">
+                    <Briefcase className="mr-2 h-4 w-4" />
+                    Career Opportunities
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="https://intellibus.com/careers" target="_blank" className="cursor-pointer">
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    View All Jobs
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="https://intellibus.com/ai-masterclass" target="_blank" className="cursor-pointer">
+                    <Brain className="mr-2 h-4 w-4" />
+                    AI Masterclass
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <Link href="#about" className="text-sm font-medium hover:text-primary transition-colors">
               About
             </Link>
-            <Button variant="default" size="sm" asChild>
-              <Link href="#register">Register Now</Link>
+            
+            <Button variant="default" size="sm" className="shadow-md hover:shadow-lg transition-all duration-300" asChild>
+              <Link href="/register">Register Now</Link>
             </Button>
           </nav>
         </div>
@@ -218,41 +272,43 @@ export default function Page() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="container space-y-8 py-16 md:py-24 lg:py-32">
-          <div className="flex flex-col items-center gap-6 text-center">
-            <Badge variant="secondary" className="h-7 items-center rounded-full px-4 text-sm font-medium">
-              Intellibus Hackathon 2025 🚀
-            </Badge>
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent">
-              Build. Innovate. Win.
-            </h1>
-            <p className="max-w-[48rem] text-lg leading-relaxed text-muted-foreground sm:text-xl sm:leading-8">
-              Launch groundbreaking solutions in real-time experiences with cutting-edge technology and cloud-native
-              deployments.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <div className="flex items-center space-x-2 text-sm">
-                <MapPin className="h-4 w-4" />
-                <span>AC Hotel Kingston, Jamaica</span>
+        <section className="relative overflow-hidden">
+          <div className="container mx-auto px-4 py-20 md:py-28 lg:py-36">
+            <div className="flex flex-col items-center gap-8 text-center max-w-6xl mx-auto">
+              <Badge variant="secondary" className="h-8 items-center rounded-full px-6 text-sm font-medium backdrop-blur-sm">
+                Intellibus Hackathon 2025 🚀
+              </Badge>
+              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent leading-tight">
+                Build. Innovate. Win.
+              </h1>
+              <p className="max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl sm:leading-8 mx-auto">
+                Launch groundbreaking solutions in real-time experiences with cutting-edge technology and cloud-native
+                deployments.
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-6 mt-4">
+                <div className="flex items-center space-x-2 text-sm font-medium bg-background/80 backdrop-blur-sm rounded-full px-4 py-2 border">
+                  <MapPin className="h-4 w-4 text-primary" />
+                  <span>AC Hotel Kingston, Jamaica</span>
+                </div>
+                <div className="flex items-center space-x-2 text-sm font-medium bg-background/80 backdrop-blur-sm rounded-full px-4 py-2 border">
+                  <Calendar className="h-4 w-4 text-primary" />
+                  <span>October 18-19, 2025</span>
+                </div>
+                <div className="flex items-center space-x-2 text-sm font-medium bg-background/80 backdrop-blur-sm rounded-full px-4 py-2 border">
+                  <Trophy className="h-4 w-4 text-primary" />
+                  <span>$15,000+ in Prizes</span>
+                </div>
               </div>
-              <div className="flex items-center space-x-2 text-sm">
-                <Calendar className="h-4 w-4" />
-                <span>March 15-16, 2025</span>
+              <div className="flex flex-wrap justify-center gap-4 mt-8">
+                <Button size="lg" className="h-14 px-10 text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" asChild>
+                  <Link href="#register">Get Started</Link>
+                </Button>
+                <Button variant="outline" size="lg" className="h-14 px-10 text-base font-semibold border-2 hover:bg-accent/50 transition-all duration-300 hover:scale-105" asChild>
+                  <Link href="/docs">
+                    Explore Documentation <span className="ml-2">→</span>
+                  </Link>
+                </Button>
               </div>
-              <div className="flex items-center space-x-2 text-sm">
-                <Trophy className="h-4 w-4" />
-                <span>$15,000+ in Prizes</span>
-              </div>
-            </div>
-            <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <Button size="lg" className="h-12 px-8 text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105" asChild>
-                <Link href="#register">Get Started</Link>
-              </Button>
-              <Button variant="outline" size="lg" className="h-12 px-8 text-base font-semibold border-2 hover:bg-accent/50 transition-all duration-300 hover:scale-105" asChild>
-                <Link href="/docs">
-                  Explore Documentation <span className="ml-2">→</span>
-                </Link>
-              </Button>
             </div>
           </div>
         </section>
@@ -737,7 +793,7 @@ export default function Page() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <CalendarDays className="h-6 w-6" />
-                  Day 1 – March 15, 2025 (Kickoff & Development Begins)
+                  Day 1 – October 18, 2025 (Kickoff & Development Begins)
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -777,7 +833,7 @@ export default function Page() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <CalendarDays className="h-6 w-6" />
-                  Day 2 – March 16, 2025 (Finalizing & Presentations)
+                  Day 2 – October 19, 2025 (Finalizing & Presentations)
                 </CardTitle>
               </CardHeader>
               <CardContent>
